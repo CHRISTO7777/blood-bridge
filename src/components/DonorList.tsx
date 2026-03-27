@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Calendar, CheckCircle, XCircle } from 'lucide-react';
 import { donors, type BloodGroup } from '@/data/mockData';
+import DonorRegistrationForm from '@/components/DonorRegistrationForm';
 
 interface DonorListProps {
   filterGroup: BloodGroup | null;
