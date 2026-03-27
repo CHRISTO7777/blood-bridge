@@ -26,7 +26,6 @@ const DonorList = ({ filterGroup }: DonorListProps) => {
           </div>
           <DonorRegistrationForm />
         </div>
-        </p>
 
         {filtered.length === 0 ? (
           <div className="rounded-xl border border-border bg-card p-12 text-center">
