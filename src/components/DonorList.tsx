@@ -15,11 +15,17 @@ const DonorList = ({ filterGroup }: DonorListProps) => {
   return (
     <section id="donors" className="bg-background px-6 py-16">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="mb-2 text-2xl font-bold text-foreground">
-          {filterGroup ? `${filterGroup} Donors` : 'All Donors'}
-        </h2>
-        <p className="mb-8 text-muted-foreground">
-          {filtered.length} donor{filtered.length !== 1 ? 's' : ''} found
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h2 className="mb-1 text-2xl font-bold text-foreground">
+              {filterGroup ? `${filterGroup} Donors` : 'All Donors'}
+            </h2>
+            <p className="text-muted-foreground">
+              {filtered.length} donor{filtered.length !== 1 ? 's' : ''} found
+            </p>
+          </div>
+          <DonorRegistrationForm />
+        </div>
         </p>
 
         {filtered.length === 0 ? (
