@@ -49,7 +49,13 @@ const Emergency = () => {
   const onSubmit = (values: FormValues) => {
     const newReq: BloodRequest = {
       id: `R${String(bloodRequests.length + 1).padStart(3, '0')}`,
-      ...values,
+      patientName: values.patientName,
+      bloodGroup: values.bloodGroup,
+      hospitalName: values.hospitalName,
+      city: values.city,
+      contact: values.contact,
+      requiredDate: values.requiredDate,
+      urgency: values.urgency,
       status: 'pending',
       createdAt: new Date().toISOString().split('T')[0],
     };

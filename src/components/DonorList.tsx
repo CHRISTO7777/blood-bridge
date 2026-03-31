@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Calendar, CheckCircle, XCircle } from 'lucide-react';
 import { donors, type BloodGroup } from '@/data/mockData';
-import DonorRegistrationForm from '@/components/DonorRegistrationForm';
 
 interface DonorListProps {
   filterGroup: BloodGroup | null;
@@ -15,16 +14,13 @@ const DonorList = ({ filterGroup }: DonorListProps) => {
   return (
     <section id="donors" className="bg-background px-6 py-16">
       <div className="container mx-auto max-w-5xl">
-        <div className="mb-8 flex items-center justify-between">
-          <div>
-            <h2 className="mb-1 text-2xl font-bold text-foreground">
-              {filterGroup ? `${filterGroup} Donors` : 'All Donors'}
-            </h2>
-            <p className="text-muted-foreground">
-              {filtered.length} donor{filtered.length !== 1 ? 's' : ''} found
-            </p>
-          </div>
-          <DonorRegistrationForm />
+        <div className="mb-8">
+          <h2 className="mb-1 text-2xl font-bold text-foreground">
+            {filterGroup ? `${filterGroup} Donors` : 'All Donors'}
+          </h2>
+          <p className="text-muted-foreground">
+            {filtered.length} donor{filtered.length !== 1 ? 's' : ''} found
+          </p>
         </div>
 
         {filtered.length === 0 ? (
@@ -47,7 +43,7 @@ const DonorList = ({ filterGroup }: DonorListProps) => {
                     <h3 className="font-semibold text-card-foreground">{donor.name}</h3>
                     <div className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
                       <MapPin className="h-3.5 w-3.5" />
-                      {donor.location}
+                      {donor.city}
                     </div>
                   </div>
                   <span className="rounded-lg bg-accent px-3 py-1.5 font-mono text-sm font-bold text-accent-foreground">
